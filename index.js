@@ -38,3 +38,20 @@ function addN(arr, n){
 	// Uncomment these to check your work!
 	console.log(addN([1, 2, 3], 3)); // expected log [4, 5, 6]
 	console.log(addN([3, 4, 5], 2)); // expected log [5, 6, 7]
+	
+	
+/*Using a FOR loop, write a function getTheSum which adds each element in arr to find the array total.*/
+	function getTheSum(arr){
+		  // ADD CODE HERE
+		  
+		  let sum = 0;
+		  for(let i=0; i<arr.length; i++)
+		    {
+		      sum = sum + arr[i];
+		    }
+		  return sum;
+		}
+
+		// Uncomment these to check your work!
+		console.log(getTheSum([3, 6, 9])); // expected log 18
+		console.log(getTheSum([10, 11, 12])); // expected log 33
