@@ -132,3 +132,39 @@ function mergingTripletsAndQuints(array1, array2) {
 	// Uncomment these to check your work!
 	console.log(mergingTripletsAndQuints([1, 2, 3, 4, 5, 15], [1, 3, 6, 7, 8, 9])); // expected log [1, 2, 9, 4, 13, 24]
 	console.log(mergingTripletsAndQuints([1, 1, 3, 9, 5, 15], [1, 2, 3, 4, 5, 6])); // expected log [1, 1, 6, 13, 10, 21]
+	
+	
+	/*
+	 * Using a loop, write a function getTheRange 
+	 * which finds the range (difference between high and low) of arr. 
+	 * The value returned should be an array with the low, high, and range.*/
+	
+	function getTheRange(arr){
+		  // ADD CODE HERE
+		  const high = Math.max(...arr);
+		  const low = Math.min(...arr);
+		  const range = high - low;
+		  
+		  const newArr = [];
+		  newArr.push(low);
+		  newArr.push(high);
+		  newArr.push(range);
+		  
+		  return newArr;
+		  
+		}
+
+		// Uncomment these to check your work!
+		console.log(getTheRange([3, 2, 5, 4, 7, 9, 10])); // expect log [2, 10, 8]
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
