@@ -156,12 +156,116 @@ function mergingTripletsAndQuints(array1, array2) {
 
 		// Uncomment these to check your work!
 		console.log(getTheRange([3, 2, 5, 4, 7, 9, 10])); // expect log [2, 10, 8]
+		
+		
+		/*
+		 * Write a function addingAllTheWeirdStuff which adds the sum of all the odd numbers
+		 *  in array2 to each element under 10 in array1. Similarly, addingAllTheWeirdStuff 
+		 *  should also add the sum of all the even numbers in array2 to those elements over 10 
+		 *  in array1.
+		 *  BONUS: If any element in array2 is greater than 20, 
+		 *  add 1 to every element in array1.*/
+		
+		const addingAllTheWeirdStuff = (array1, array2) => {
+		    // ADD CODE HERE
+		  let valueOdd = 0;
+		  let valueEven = 0;
+		  let bonus = 0;
+		  
+		  //Condition 1: Add the sum of all odd numbers / even numbers in Array 2  
+		  for(let i = 0; i<array2.length; i++)
+		  {
+		    if(array2[i] % 2 != 0)
+		      {
+		        valueOdd = valueOdd + array2[i];
+		      }
+		    else if(array2[i] % 2 === 0)
+		        {
+		          valueEven = valueEven + array2[i];   
+		  			} 
+		  	}
+		  
+				//cHECK elements less than or greater than 10 in Array 1 and add sum of oddNumbers / evenNumbers to it
+		    for(let j = 0; j<array1.length; j++)
+		    {
+		       if(array1[j] < 10)
+		      {
+		        array1[j] = array1[j] + valueOdd;
+		      }
+		      else if(array1[j] > 10)
+		      {
+		        array1[j] = array1[j] + valueEven;
+		      }
+		    }
+		  
+		  //BONUS
+		   for(let x = 0; x<array2.length; x++)
+		     {
+		       if(array2[x] > 20)
+		      {
+		        bonus = 1;
+		        for(let y = 0; y<array1.length; y++)
+		          {
+		            array1[y] = array1[y] + bonus;
+		          }
+		        
+		        return array1;
+		      }
+		     }
+		  return array1;
+		  
+		}
+
+		// Uncomment these to check your work!
+		 console.log(addingAllTheWeirdStuff([1, 3, 5, 17, 15], [1, 2, 3, 4, 5])); // expected log [10, 12, 14, 23, 21]
+		console.log(addingAllTheWeirdStuff([1, 3, 5, 17, 15, 1], [1, 2, 3, 4, 5, 22])); // expected log [11, 13, 15, 46, 44, 11]
 	
 	
+		/*
+		Write a function disemvowel 
+		that takes in a string and returns a new string with all vowels removed. */
+		
+		//SOLUTION 1
+		function disemvowel(string) {
+			  // ADD CODE HERE
+			  /* Regular Expression: For case senstitivity, Use //g, For Case insentitive, Use //gi */
+			  const regex = /[aeiou]/gi;
+			  const emVowel = string.replace(regex, '');
+			  return emVowel;
+			}
+
+			// Uncomment these to check your work!
+			console.log(disemvowel('CodeSmith')); // => 'CdSmth'
+			console.log(disemvowel('BANANA')); // => 'BNN'
+			console.log(disemvowel('hello world')); // => 'hll wrld'
 	
 	
-	
-	
+	//SOLUTION 2
+		const disemvowel = (string) => {
+			//Create an objects of vowels
+			let vowels = {
+					'a': true,
+					'e': true,
+					'i': true,
+					'o': true,
+					'u': true
+			}
+			
+			//initialize a new variable
+			let result = '';
+			
+			//Loop through the string
+			for(let i = 0; i<string.length; i++)
+			{
+				let letter = string[i].toLowerCase();
+				if(!vowels[letter])
+					{
+					result += string[i];
+					}
+			}
+			
+			return result;
+		}
 	
 	
 	
